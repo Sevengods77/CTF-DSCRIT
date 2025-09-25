@@ -220,7 +220,7 @@ def challenge():
     
     # Check for victory condition
     if totals['trick'] >= TARGET_TRICK_VOTES:
-        trickery_message = f"🎉 MAXIMUM TRICKERY ACHIEVED!!! 🎉<br>Goal reached: Trick = {totals['trick']}"
+        trickery_message = f"TRICKERY ACHIEVED BUT...... <br>Goal reached: Trick = {totals['trick']}"
     
     return render_template_string(UNIFIED_PAGE, 
                                   vote_error=vote_error,
@@ -246,4 +246,5 @@ if __name__ == '__main__':
     if not os.path.exists(os.path.join('static', FLAG_IMAGE)):
         os.makedirs('static', exist_ok=True)
         print(f"Place '{FLAG_IMAGE}' inside 'static' folder before running.")
+
     app.run(host='0.0.0.0', port=5000, debug=True)
